@@ -4,7 +4,7 @@ import socket #how we are going to connect different instances on the same netor
 HEADER = 64
 PORT = 5050
 FORMAT = 'utf-8'
-DISCONNECT_MESSAGE = '!DISCONNECT'
+DISCONNECT_MESSAGE = '!DISCONNECT' #message to leave
 SERVER = '127.0.1.1'
 ADDR = (SERVER, PORT)
 
@@ -21,5 +21,8 @@ def send(msg):
     client.send(message)
     print(client.recv(2048).decode(FORMAT))
 
-client_message = input("Enter a message to send to the server:")
-send(client_message)
+while True:
+    client_message = input("Enter a message to send to the server:")
+    if client_message == 'q':
+        break
+    send(client_message)

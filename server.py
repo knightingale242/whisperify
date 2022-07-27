@@ -3,7 +3,7 @@ import threading #how we are going to handle multiple clients
 
 HEADER = 64
 PORT = 5050
-SERVER = socket.gethostbyname(socket.gethostname())
+SERVER = socket.gethostbyname(socket.gethostname()) #IP ADDRESS
 print("Current server address:" + SERVER) 
 ADDR = (SERVER, PORT)
 FORMAT = 'utf-8'
